@@ -6,9 +6,9 @@ lang: en
 timezone: Asia/Kolkata
 
 title: CorpIT
-tagline: Technical Notes & Labs
+tagline: Learning Storage, Linux, Virtualization, DevOps and some random stuff
 description: >-
-  Personal site for labs, notes, and technical writeups.
+  Handmade By Talented Professionals
 
 url: "https://bxtgeek.github.io"
 baseurl: ""
@@ -106,7 +106,7 @@ compress_html:
   comments: all
   endings: all
   blanklines: false
-  
+
 exclude:
   - "*.gem"
   - "*.gemspec"
