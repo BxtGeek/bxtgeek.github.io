@@ -109,7 +109,5 @@ exclude:
 # Footer
 # -----------------------
 social:
-  name: CorpIT        
-  email: bxtgeek@gmail.com
-  links:
-    - https://github.com/bxtgeek
+social:
+  name: CorpIT.org
