@@ -20,8 +20,8 @@ github:
   username: bxtgeek
 
 social:
-  name: Your Name
-  email: your@email.com
+  name: Manoj Kumar
+  email: bxtgeek@gmail.com
   links:
     - https://github.com/yourusername
 
@@ -39,15 +39,6 @@ toc: true
 analytics:
   google:
     id: ""
-
-# -----------------------
-# Comments (optional)
-# -----------------------
-comments:
-  provider: utterances
-  utterances:
-    repo: yourusername/yourusername.github.io
-    issue_term: pathname
 
 # -----------------------
 # PWA
@@ -113,3 +104,12 @@ exclude:
   - node_modules
   - README.md
   - LICENSE
+
+# -----------------------
+# Footer
+# -----------------------
+social:
+  name: CorpIT        
+  email: bxtgeek@gmail.com
+  links:
+    - https://github.com/bxtgeek
