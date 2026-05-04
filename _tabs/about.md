@@ -46,7 +46,7 @@ On this blog, I mainly write about:
 
 ## 👨‍💻 Ravi Ranjan Kumar
 
-Hello, I’m **Ravi Ranjan Kumar**, currently working as a **Senior Reliability Systems Engineer at Nutanix**.
+Hello, I’m **Ravi Ranjan Kumar**, currently working as a **Senior Reliability Systems Engineer at Cohesity**.
 
 - 8+ years of IT experience  
 - 4+ years focused on Storage Technologies  
