@@ -4,7 +4,7 @@ date: 2026-03-02 00:00:00 +0530
 categories: 
   - "qemu"
 image:
-  path: /assets/img/posts/Essential-Virsh-Commands-for-Managing-Virtual-Machines-on-Debian-12.png
+  path: /assets/img/posts/essential-virsh-commands-debian-12.webp
 ---
 
 The **essential virsh commands** help you manage virtual machines from the command line. If you use libvirt on Debian, you must know these commands.

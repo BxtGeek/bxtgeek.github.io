@@ -4,7 +4,7 @@ date: 2026-03-03 00:00:00 +0530
 categories: 
   - "qemu"
 image:
-  path: /assets/img/posts/Advanced-Virsh-Commands-on-Debian-12-Console-Attach-Resize-Migrate.png
+  path: /assets/img/posts/advanced-virsh-commands-debian-12.webp
 ---
 
 **Advanced virsh commands** allow you to control and modify running virtual machines. These commands go beyond basic start and stop operations.

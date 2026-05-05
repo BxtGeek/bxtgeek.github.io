@@ -4,7 +4,7 @@ date: 2026-03-02 00:00:00 +0530
 categories: 
   - "qemu"
 image:
-  path: /assets/img/posts/Install-KVM-QEMU-and-Libvirt-on-Debian-12.png
+  path: /assets/img/posts/install-kvm-qemu-libvirt-debian-12.webp
 ---
 
 If you want to **install KVM QEMU and Libvirt on Debian 12**, this guide will help you step by step. We will use **Debian GNU/Linux 12 (Bookworm)** for all future examples in this series.

@@ -4,7 +4,7 @@ date: 2026-03-03 00:00:00 +0530
 categories: 
   - "qemu"
 image:
-  path: /assets/img/posts/Snapshots-and-Cloning-in-KVM-on-Debian-12-Complete-Guide.png
+  path: /assets/img/posts/snapshots-and-cloning-in-kvm-debian-12.webp
 ---
 
 **Snapshots and Cloning in KVM** allow you to save VM states and duplicate machines quickly. These features are essential for labs, testing, and production rollbacks.

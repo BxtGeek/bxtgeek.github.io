@@ -4,7 +4,7 @@ date: 2026-03-02 00:00:00 +0530
 categories: 
   - "qemu"
 image:
-  path: /assets/img/posts/Understanding-VM-XML-Structure-in-Libvirt-on-Debian-12.png
+  path: /assets/img/posts/vm-xml-structure-libvirt-debian-12.webp
 ---
 
 The **VM XML structure in libvirt** defines how a virtual machine works. It controls CPU, memory, storage, and networking.

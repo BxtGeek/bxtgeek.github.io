@@ -4,7 +4,7 @@ date: 2026-03-02 00:00:00 +0530
 categories: 
   - "qemu"
 image:
-  path: /assets/img/posts/Virsh-Storage-Management-Guide-on-Debian-12-Bookworm.png
+  path: /assets/img/posts/virsh-storage-management-debian-12.webp
 ---
 
 **Virsh storage management** allows you to control disks and storage for virtual machines. If you use libvirt, understanding storage is essential.

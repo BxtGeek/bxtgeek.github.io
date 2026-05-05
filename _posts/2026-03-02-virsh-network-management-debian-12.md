@@ -4,7 +4,7 @@ date: 2026-03-02 00:00:00 +0530
 categories: 
   - "qemu"
 image:
-  path: /assets/img/posts/Virsh-Network-Management-Guide-on-Debian-12-NAT-vs-Bridge-Explained.png
+  path: /assets/img/posts/virsh-network-management-debian-12.webp
 ---
 
 **Virsh network management** allows you to control virtual machine networking in libvirt. If you manage KVM environments, networking knowledge is essential.

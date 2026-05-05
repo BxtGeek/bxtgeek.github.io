@@ -4,7 +4,7 @@ date: 2026-03-02 00:00:00 +0530
 categories: 
   - "qemu"
 image:
-  path: /assets/img/posts/What-Are-QEMU-Libvirt-and-Virsh_-How-They-Work-Together-Explained.png
+  path: /assets/img/posts/qemu-libvirt-and-virsh-explained.webp
 ---
 
 **QEMU Libvirt and Virsh** are powerful tools used for virtualization on Linux. Together, they help you create, manage, and control virtual machines with ease.

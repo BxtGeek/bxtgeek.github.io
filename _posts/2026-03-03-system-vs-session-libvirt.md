@@ -4,7 +4,7 @@ date: 2026-03-03 00:00:00 +0530
 categories:
   - qemu
 image:
-  path: /assets/img/posts/System-vs-Session-Libvirt-Understanding-qemu-___system-and-qemu-___session.png
+  path: /assets/img/posts/system-vs-session-libvirt.webp
 ---
 
 Understanding **System vs Session libvirt** is important when managing virtual machines. Libvirt can run in two modes: system mode and session mode.
