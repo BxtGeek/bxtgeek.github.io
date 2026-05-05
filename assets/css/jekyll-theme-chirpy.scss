@@ -3,10 +3,10 @@
 
 @import "main";
 
-/* FORCE override */
+/* your override */
 .preview-img img {
   height: auto !important;
-  max-height: none !important;
+  width: 100% !important;
   object-fit: contain !important;
 }
 
