@@ -1,6 +1,6 @@
 /* Fix ALL Chirpy cover images */
 .preview-img img {
-  object-fit: contain !important;
+    object-fit: contain !important;
 }
 
 /* Override forced cropping container */
