@@ -1,4 +1,10 @@
-.post-preview .preview-img img,
-.post-cover img {
+/* Fix ALL Chirpy cover images */
+.preview-img img {
   object-fit: contain !important;
+}
+
+/* Override forced cropping container */
+.preview-img {
+  aspect-ratio: auto !important;
+  height: auto !important;
 }
