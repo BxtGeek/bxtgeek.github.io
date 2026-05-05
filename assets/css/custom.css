@@ -1,9 +1,11 @@
-/* Fix ALL Chirpy cover images */
+/* FORCE override Chirpy cover image behavior */
 .preview-img img {
-    object-fit: contain !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
 }
 
-/* Override forced cropping container */
+/* Remove forced aspect ratio container */
 .preview-img {
   aspect-ratio: auto !important;
   height: auto !important;
