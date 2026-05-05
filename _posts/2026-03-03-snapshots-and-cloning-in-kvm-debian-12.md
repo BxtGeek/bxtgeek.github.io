@@ -16,15 +16,10 @@ Because virtualization environments change often, snapshots and cloning provide 
 # Understanding KVM Snapshots
 
 A snapshot saves the state of a virtual machine at a specific time.
-
 It can include:
-
 - Disk state
-
 - Memory state
-
 - VM configuration
-
 You manage snapshots using **virsh**.
 
 # Snapshot Command Overview
@@ -32,29 +27,32 @@ You manage snapshots using **virsh**.
 Virsh provides several snapshot commands:
 
 ```
-snapshot-createsnapshot-create-assnapshot-currentsnapshot-deletesnapshot-dumpxmlsnapshot-editsnapshot-infosnapshot-listsnapshot-parentsnapshot-revert
+snapshot-create
+snapshot-create-as
+snapshot-current
+snapshot-delete
+snapshot-dumpxml
+snapshot-edit
+snapshot-info
+snapshot-list
+snapshot-parent
+snapshot-revert
 ```
-
 These commands give full control over snapshot lifecycle.
 
 # Creating a Snapshot
 
 Create a simple snapshot:
 
-```bashvirsh snapshot-create alpine-test
 ```
-
-Example output:
-
+virsh snapshot-create alpine-test
 ```
-Domain snapshot 1772322999 created
-```
-
 This creates a snapshot with an auto-generated name.
 
 ## Listing Snapshots
 
-```bashvirsh snapshot-list alpine-test
+```
+virsh snapshot-list alpine-test
 ```
 
 Example output:
@@ -67,7 +65,8 @@ Because this shows creation time and state, you can easily track versions.
 
 ## Viewing Snapshot Information
 
-```bashvirsh snapshot-info alpine-test alpine-test_2026-02-22T03:47
+```
+virsh snapshot-info alpine-test alpine-test_2026-02-22T03:47
 ```
 
 Example:
@@ -80,20 +79,32 @@ Notice the **Location: internal**. This means the snapshot is stored inside the 
 
 ## Viewing Snapshot XML
 
-```bashvirsh snapshot-dumpxml alpine-test 1772322999
+```
+virsh snapshot-dumpxml alpine-test 1772322999
 ```
 
 Example:
 
-```
-<domainsnapshot>  <name>1772322999</name>  <state>shutoff</state>  <parent>    <name>alpine-test_2026-02-22T03:47</name>  </parent>  <memory snapshot='no'/>  <disks>    <disk name='vda' snapshot='internal'/>  </disks></domainsnapshot>
+```xml
+<domainsnapshot>
+  <name>1772322999</name>
+  <state>shutoff</state>
+  <parent>
+    <name>alpine-test_2026-02-22T03:47</name>
+  </parent>
+  <memory snapshot='no'/>
+  <disks>
+    <disk name='vda' snapshot='internal'/>
+  </disks>
+</domainsnapshot>
 ```
 
 Because snapshots form a tree structure, each snapshot may have a parent.
 
 ## Reverting to a Snapshot
 
-```bashvirsh snapshot-revert alpine-test 1772322999
+```
+virsh snapshot-revert alpine-test 1772322999
 ```
 
 This restores the VM to the selected snapshot state.
@@ -102,7 +113,8 @@ Always verify before reverting. Data changes after that snapshot will be lost.
 
 ## Deleting a Snapshot
 
-```bashvirsh snapshot-delete alpine-test 1772322999
+```
+virsh snapshot-delete alpine-test 1772322999
 ```
 
 Example output:
@@ -113,7 +125,8 @@ Domain snapshot 1772322999 deleted
 
 After deletion, confirm using:
 
-```bashvirsh snapshot-list alpine-test
+```
+virsh snapshot-list alpine-test
 ```
 
 # Internal Snapshot vs External Snapshot
@@ -125,26 +138,13 @@ Understanding snapshot types is important.
 An **internal snapshot** is stored inside the qcow2 disk file.
 
 Advantages:
-
 - Easy to create
-
 - Simple management
-
 - No extra files
 
 Disadvantages:
-
 - Can increase disk complexity
-
 - Harder to manage large chains
-
-Your example shows:
-
-```
-Location: internal
-```
-
-This confirms an internal snapshot.
 
 ## External Snapshot
 
@@ -155,11 +155,8 @@ The original disk becomes a backing file.
 This method uses copy-on-write technology.
 
 Advantages:
-
 - Cleaner disk separation
-
 - Better for production
-
 - Easier backup
 
 However, it creates multiple disk files.
@@ -167,16 +164,15 @@ However, it creates multiple disk files.
 # Copy-on-Write Explained
 
 Copy-on-write (CoW) means:
-
 - Original data stays unchanged
-
 - New changes go to a new file
 
 In KVM, this is commonly used with qcow2.
 
 For example:
 
-```bashqemu-img create -f qcow2 -b base.qcow2 vm1.qcow2
+```
+qemu-img create -f qcow2 -b base.qcow2 vm1.qcow2
 ```
 
 Here:
@@ -194,13 +190,9 @@ A **template design** approach improves VM deployment.
 Typical workflow:
 
 - Install Debian 12 cleanly
-
 - Update system
-
 - Remove machine-specific data
-
 - Convert disk to template
-
 - Create new VMs using backing files
 
 This approach reduces duplication.
@@ -213,15 +205,14 @@ Cloning creates a new VM from an existing one.
 
 Use:
 
-```bashvirt-clone --original alpine-test --name alpine-clone --file /var/lib/libvirt/images/alpine-clone.qcow2
+```
+virt-clone --original alpine-test --name alpine-clone --file /var/lib/libvirt/images/alpine-clone.qcow2
 ```
 
 This creates:
 
 - New VM definition
-
 - New disk file
-
 - New MAC address
 
 Because virt-clone avoids manual duplication, it reduces errors.
@@ -243,17 +234,12 @@ Both are important in Snapshots and Cloning in KVM.
 Use snapshots when:
 
 - Testing updates
-
 - Performing risky changes
-
 - Creating rollback points
 
 Use cloning when:
-
 - Deploying multiple servers
-
 - Scaling applications
-
 - Creating lab environments
 
 Because each serves a different purpose, choose wisely.
@@ -263,11 +249,8 @@ Because each serves a different purpose, choose wisely.
 Snapshots and Cloning in KVM provide:
 
 - Safe testing environments
-
 - Quick rollback capability
-
 - Efficient disk usage
-
 - Faster VM provisioning
 
 In Debian GNU/Linux 12 (Bookworm), these tools work seamlessly with libvirt.
