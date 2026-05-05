@@ -111,10 +111,3 @@ exclude:
 social:
 social:
   name: CorpIT.org
-
-# -----------------------
-# Custom Assets
-# -----------------------
-assets:
-  css:
-    - /assets/css/custom.css

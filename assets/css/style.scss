@@ -1,11 +1,15 @@
-/* FORCE override Chirpy cover image behavior */
+---
+---
+
+@import "main";
+
+/* FORCE override */
 .preview-img img {
   height: auto !important;
   max-height: none !important;
   object-fit: contain !important;
 }
 
-/* Remove forced aspect ratio container */
 .preview-img {
   aspect-ratio: auto !important;
   height: auto !important;
