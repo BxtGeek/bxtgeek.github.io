@@ -1,0 +1,14 @@
+---
+---
+
+@import "main";
+
+/* Fix cover cropping */
+.post .preview-img img {
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.post .preview-img {
+  aspect-ratio: auto !important;
+}
