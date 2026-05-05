@@ -1,0 +1,4 @@
+.post-preview .preview-img img,
+.post-cover img {
+  object-fit: contain !important;
+}
