@@ -4,7 +4,7 @@ date: 2026-03-26 00:00:00 +0530
 categories: 
   - "mac-apps"
 image:
-  path: /assets/img/posts/CorpIT-Article-Thumbnails.png
+  path: /assets/img/posts/debloating-brave-browser-on-macos-and-linux-using-policies.webp
 ---
 
 Brave Browser is widely known for its privacy-focused features. However, it still includes components such as Rewards, Wallet, AI chat, VPN, and other services that may not be necessary for all users.
