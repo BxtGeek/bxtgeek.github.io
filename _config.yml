@@ -1,5 +1,4 @@
 # Basic Site Settings
-
 theme: jekyll-theme-chirpy
 lang: en
 timezone: Asia/Kolkata
@@ -13,7 +12,6 @@ url: "https://bxtgeek.github.io"
 baseurl: ""
 
 # Author / Social
-
 github:
   username: bxtgeek
 
@@ -22,39 +20,36 @@ social:
   email: bxtgeek@gmail.com
   links:
     - https://github.com/bxtgeek
+    - https://x.com/bxtgeek
+    - https://linkedin.com/in/bxtgeek/
+    - https://youtube.com/@corp-it
 
 # Appearance
-
 theme_mode: dark
 avatar: "/assets/img/avatar.png"
 toc: true
 
 # Analytics (optional)
-
 analytics:
   google:
     id: ""
 
 # PWA (keep enabled for caching)
-
 pwa:
   enabled: true
   cache:
     enabled: true
 
 # Pagination
-
 paginate: 10
 
 # Collections
-
 collections:
   tabs:
     output: true
     sort_by: order
 
 # Defaults
-
 defaults:
   - scope:
       path: ""
@@ -73,23 +68,21 @@ defaults:
       permalink: /:title/
 
 # Performance Optimizations
-
-# ✅ Compress CSS
+# Compress CSS
 sass:
   style: compressed
 
-# ✅ HTML compression (you already had it, cleaned)
+# HTML compression (you already had it, cleaned)
 compress_html:
   clippings: all
   comments: ["<!-- ", " -->"]
   endings: all
   blanklines: false
 
-# ✅ Enable incremental build (dev speed, not prod but useful)
+# Enable incremental build (dev speed, not prod but useful)
 incremental: true
 
 # Markdown / Code
-
 kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
@@ -99,7 +92,6 @@ kramdown:
       start_line: 1
 
 # Exclude unnecessary files
-
 exclude:
   - "*.gem"
   - "*.gemspec"
