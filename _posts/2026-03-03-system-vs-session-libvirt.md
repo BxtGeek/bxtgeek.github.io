@@ -11,36 +11,32 @@ Understanding **System vs Session libvirt** is important when managing virtual m
 In this guide, we use **[Debian GNU/Linux 12 (Bookworm)](https://www.corpit.org/install-kvm-qemu-libvirt-debian-12/)**. All examples in this series follow this version.
 Because each mode behaves differently, choosing the right one affects security and management.
 
-## What Is `qemu:///system`?
-
+## What Is qemu:///system?
 `qemu:///system` connects to the system-wide libvirt daemon.
-
 This mode runs as root and manages virtual machines for the entire host.
 
 ### Example:
-```bash
+```
 virsh -c qemu:///system list --all
 ````
+
 ### Key characteristics:
 - Uses system service (`libvirtd` or `virtqemud`)
-- Requires root or [libvirt](https://libvirt.org/uri.html) group access
+- Requires root or libvirt group access
 - Stores VM configs in `/etc/libvirt/qemu/`
 - Supports advanced networking like bridges
-
 Because it runs with elevated privileges, it offers full control.
 
-## What Is `qemu:///session`?
-
+## What Is qemu:///session?
 `qemu:///session` connects to a user session.
-
 It runs under the current logged-in user.
 
 ### Example:
-```bash
+```
 virsh -c qemu:///session list --all
 ```
-### Key characteristics:
 
+### Key characteristics:
 - No root required
 - Runs per user
 - Stores VM configs in user home directory
@@ -49,7 +45,6 @@ virsh -c qemu:///session list --all
 Because it runs without root, it is safer for desktop users.
 
 ## System vs Session Libvirt Comparison
-
 | Feature          | `qemu:///system`   | `qemu:///session`       |
 | ---------------- | ------------------ | ----------------------- |
 | Runs as          | Root               | Normal user             |
@@ -61,12 +56,11 @@ Because it runs without root, it is safer for desktop users.
 This comparison highlights key differences clearly.
 
 ## Socket Permissions Explained
-
 Libvirt uses UNIX sockets for communication.
 
 ### System mode sockets:
 
-```bash
+```
 /var/run/libvirt/
 ```
 
@@ -139,13 +133,11 @@ Session mode lacks advanced features needed for production.
 
 Because each serves different purposes, choose based on environment.
 
----
-
 ## Practical Example
 
 If you installed KVM on Debian 12 using:
 
-```bash
+```
 sudo apt install qemu-kvm libvirt-daemon-system
 ```
 
@@ -153,7 +145,7 @@ You are using system mode.
 
 To verify:
 
-```bash
+```
 virsh uri
 ```
 
@@ -194,12 +186,11 @@ Enterprises use system mode.
 **Can I switch modes easily?**
 Yes:
 
-```bash
+```
 virsh -c qemu:///system
 virsh -c qemu:///session
 ```
 ## Conclusion
-
 Understanding **System vs Session libvirt** is essential for proper virtualization management.
 
 * `qemu:///system` → full control and enterprise capabilities
