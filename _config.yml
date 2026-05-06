@@ -1,6 +1,5 @@
-# -----------------------
 # Basic Site Settings
-# -----------------------
+
 theme: jekyll-theme-chirpy
 lang: en
 timezone: Asia/Kolkata
@@ -13,9 +12,8 @@ description: >-
 url: "https://bxtgeek.github.io"
 baseurl: ""
 
-# -----------------------
 # Author / Social
-# -----------------------
+
 github:
   username: bxtgeek
 
@@ -23,43 +21,39 @@ social:
   name: Manoj Kumar
   email: bxtgeek@gmail.com
   links:
-    - https://github.com/yourusername
+    - https://github.com/bxtgeek
 
-# -----------------------
 # Appearance
-# -----------------------
-theme_mode: dark   # light | dark | (leave empty for auto)
-avatar: "/assets/img/avatar.png"
 
+theme_mode: dark
+avatar: "/assets/img/avatar.png"
 toc: true
 
-# -----------------------
 # Analytics (optional)
-# -----------------------
+
 analytics:
   google:
     id: ""
 
-# -----------------------
-# PWA
-# -----------------------
+# PWA (keep enabled for caching)
+
 pwa:
   enabled: true
   cache:
     enabled: true
 
-# -----------------------
 # Pagination
-# -----------------------
+
 paginate: 10
 
-# -----------------------
-# Defaults
-# -----------------------
+# Collections
+
 collections:
   tabs:
     output: true
     sort_by: order
+
+# Defaults
 
 defaults:
   - scope:
@@ -78,11 +72,23 @@ defaults:
       layout: page
       permalink: /:title/
 
-# -----------------------
-# Build Settings
-# -----------------------
+# Performance Optimizations
+
+# ✅ Compress CSS
 sass:
   style: compressed
+
+# ✅ HTML compression (you already had it, cleaned)
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  blanklines: false
+
+# ✅ Enable incremental build (dev speed, not prod but useful)
+incremental: true
+
+# Markdown / Code
 
 kramdown:
   syntax_highlighter: rouge
@@ -92,11 +98,7 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-compress_html:
-  clippings: all
-  comments: all
-  endings: all
-  blanklines: false
+# Exclude unnecessary files
 
 exclude:
   - "*.gem"
@@ -104,10 +106,6 @@ exclude:
   - node_modules
   - README.md
   - LICENSE
-
-# -----------------------
-# Footer
-# -----------------------
-social:
-social:
-  name: CorpIT.org
+  - package.json
+  - package-lock.json
+  - yarn.lock
