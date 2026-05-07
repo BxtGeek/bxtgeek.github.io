@@ -45,8 +45,14 @@ Consider an enterprise with **three storage devices** and **three network switch
 
 ### \[Video\]What is NAS and SAN and there advantages and disadvantages?
 
-{% include embed/https://youtu.be/Igtasz-lh-A' %}
-[Watch the video](https://www.youtube.com/watch?v=Igtasz-lh-A)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe
+    src="https://www.youtube.com/embed/Igtasz-lh-A"
+    style="position: absolute; top:0; left:0; width:100%; height:100%;"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
 
 ## Conclusion
 If you are on a budget and need a simple, efficient storage solution, NAS is the best choice. However, if your priority is high availability, redundancy, and enterprise-level storage, then SAN is the way to go.
