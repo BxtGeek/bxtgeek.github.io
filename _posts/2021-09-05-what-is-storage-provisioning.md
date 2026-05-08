@@ -118,7 +118,7 @@ For a **100 GB disk**:
 
 ## Lazy Zeroed vs Eager Zeroed
 | Feature                       | Lazy Zeroed       | Eager Zeroed            |
-| -- | -- | -- |
+|-------------------------------|-------------------|-------------------------|
 | Space Reserved Immediately    | Yes               | Yes                     |
 | Blocks Zeroed During Creation | No                | Yes                     |
 | VM Creation Speed             | Faster            | Slower                  |
