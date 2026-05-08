@@ -43,7 +43,7 @@ Consider an enterprise with **three storage devices** and **three network switch
 - **Requires dedicated IT staff** – Needs expert management
 - **Expensive** – High setup and maintenance costs
 
-## \[Video\]What is NAS and SAN and there advantages and disadvantages?
+## \[Video\] What is NAS and SAN and there advantages and disadvantages?
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe
