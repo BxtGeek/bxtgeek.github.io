@@ -8,107 +8,130 @@ tags:
   - "type-1-hypervisor"
   - "type-2-hypervisor"
 image:
-  path: /assets/img/posts/Hypervisor-Explained-Types-Benefits-and-How-It-Work.png
+  path: /assets/img/posts/Hypervisor-Explained-Types-Benefits-and-How-It-Work.webp
 ---
+If you've read about [virtualization](https://www.corpit.org/what-is-virtualization-and-benefit-of-virtualization/), you've inevitably come across the word **hypervisor**. It's not just jargon — it's the specific piece of software that makes virtualization work. Without a hypervisor, there are no virtual machines.
 
-In the world of virtualization, the term **hypervisor** often comes up. It might sound like a fancy buzzword, but the concept is simple. A hypervisor is the technology that makes it possible to run **multiple operating systems (OS)** on a single physical machine.
+In this article we'll cover what a hypervisor is, how it manages hardware resources, the two main types and when to use each, and the key trade-offs between them.
 
-In this article, we’ll break down **what a hypervisor is**, how it works, and the two main types you’ll come across.
+## What is a hypervisor?
 
-## What is a Hypervisor?
+A **hypervisor** — sometimes called a **Virtual Machine Monitor (VMM)** — is software or firmware that creates, runs, and manages **virtual machines (VMs)**. Its core job is to abstract physical hardware resources and share them across multiple isolated virtual environments, each running its own operating system.
 
-A **hypervisor** is software (or firmware) that creates and runs **virtual machines (VMs)**. Think of it as a **resource manager** that collects hardware resources like:
+The hardware resources a hypervisor manages include:
 
-- CPU
+- **CPU** — allocates processing time to each VM
+- **Memory (RAM)** — assigns memory pools to each VM, keeping them isolated
+- **Storage** — presents virtual disks to VMs backed by physical drives
+- **Network** — creates virtual network interfaces connected to physical adapters
 
-- Memory
+Two terms come up constantly when talking about hypervisors:
 
-- Storage
+- **Host** — the physical machine the hypervisor runs on
+- **Guest** — each virtual machine running on top of the hypervisor
 
-- Network
+Each guest VM is fully isolated from the others. It has its own OS, its own virtual hardware, and no visibility into what's running in neighbouring VMs — even though they all share the same physical machine underneath.
 
-It then **pools these resources** and distributes them to VMs as needed.
+## How a hypervisor manages resources
 
-- The physical machine that runs the hypervisor is called the **Host**.
+When you start a VM, the hypervisor doesn't hand over real hardware — it presents a **virtual representation** of that hardware to the guest OS. The guest OS thinks it's running on a real machine, but every hardware instruction it issues is intercepted and handled by the hypervisor.
 
-- The virtual machines running on top are called **Guests**.
+This abstraction layer is what makes it possible to:
 
-With a hypervisor, you can run **multiple operating systems simultaneously** on the same hardware, making your system more efficient.
+- Run a Windows VM and a Linux VM side by side on the same server
+- Pause or snapshot a VM and resume it later without affecting others
+- Move a VM from one physical host to another with no downtime (live migration)
+- Allocate more virtual CPU or RAM to a VM without changing physical hardware
 
-## Types of Hypervisors
+The hypervisor continuously arbitrates access to the underlying hardware, ensuring no single VM can monopolise resources or interfere with others.
 
-#### Type 1 Hypervisor (Bare-Metal Hypervisor)
+## Types of hypervisors
 
-- Runs **directly on the host hardware** without a traditional operating system.
+There are two categories of hypervisor, defined by how they interact with the physical hardware.
 
-- Provides better performance and efficiency.
+### Type 1 — bare-metal hypervisor
 
-- Commonly used in enterprise and data centers.
+A Type 1 hypervisor runs **directly on the physical hardware**, with no general-purpose operating system underneath it. It is the first thing that loads when the machine boots, and it owns the hardware entirely.
 
-**Examples:**
+Because there's no host OS consuming resources or introducing latency, Type 1 hypervisors are significantly more efficient and are the standard in enterprise data centres and cloud infrastructure.
 
-- VMware vSphere/ESXi
+**Characteristics:**
+- Direct hardware access → lower overhead and better performance
+- Purpose-built for running VMs at scale
+- Requires dedicated hardware (you can't browse the web on an ESXi host)
+- Managed remotely via separate management tools (e.g. VMware vCenter)
 
-- Microsoft Hyper-V
+**Common examples:**
 
-- KVM (Kernel-based Virtual Machine)
+| Hypervisor | Vendor | Notes |
+| VMware ESXi / vSphere | VMware (Broadcom) | Industry standard in enterprise environments |
+| Microsoft Hyper-V | Microsoft | Built into Windows Server; also available standalone |
+| KVM | Open source (Linux) | Integrated into the Linux kernel; powers many cloud platforms |
+| Citrix Hypervisor | Citrix | Enterprise-focused; strong VDI support |
+| Xen | Open source | Used by AWS under the hood historically |
 
-#### Type 2 Hypervisor (Hosted Hypervisor)
+### Type 2 — hosted hypervisor
 
-- Runs **on top of a host operating system** (like Windows, Linux, or macOS).
+A Type 2 hypervisor runs **on top of an existing operating system** — your regular Windows, macOS, or Linux install. The host OS loads first, then the hypervisor runs as an application on top of it, and VMs run inside that.
 
-- Easier to install and use but slightly slower than Type 1 due to the extra OS layer.
+The extra OS layer adds overhead: every hardware request from a guest VM must pass through the hypervisor *and* the host OS before reaching the physical hardware. This makes Type 2 hypervisors less efficient than Type 1, but they're far easier to set up and ideal for personal use, development, and testing.
 
-- Ideal for personal use, testing, and development.
+**Characteristics:**
+- Runs on any desktop or laptop alongside normal applications
+- Easy to install — no dedicated hardware needed
+- Slight performance penalty due to the host OS layer
+- VMs share resources with whatever else is running on the host
 
-**Examples:**
+**Common examples:**
 
-- [Oracle VirtualBox](https://www.virtualbox.org/)
+| Hypervisor | Vendor | Notes |
+| VirtualBox | Oracle | Free, open source; works on Windows, macOS, Linux |
+| VMware Workstation Pro | VMware | Paid; professional-grade features for developers |
+| Parallels Desktop | Parallels | Paid; best option for running Windows on Apple Silicon Macs |
+| QEMU | Open source | Lightweight; often used with KVM on Linux |
 
-- VMware Workstation
+![Types of Hypervisors](/assets/img/posts/Types-of-Hypervisors-visual-selection.webp)
 
-- Parallels Desktop
+## Type 1 vs Type 2 at a glance
 
-<figure>
+| | Type 1 (bare-metal) | Type 2 (hosted) |
+| Runs on | Physical hardware directly | Host operating system |
+| Performance | Higher — less overhead | Lower — host OS adds a layer |
+| Setup complexity | Higher — dedicated hardware | Lower — installs like any app |
+| Typical use | Enterprise servers, data centres, cloud | Developers, home labs, testing |
+| Requires dedicated machine | Yes | No |
+| Examples | ESXi, Hyper-V, KVM | VirtualBox, VMware Workstation, Parallels |
 
-![Types of Hypervisors](/assets/img/posts/Types-of-Hypervisors-visual-selection.png)
+## Which type should you use?
 
-<figcaption>
+**Use a Type 1 hypervisor if** you're running production workloads, deploying VMs in a data centre or on-premises infrastructure, or need maximum performance and reliability. ESXi and Hyper-V are the most common choices in enterprise environments; KVM is the dominant option in Linux-based and cloud environments.
 
-Types of Hypervisors
+**Use a Type 2 hypervisor if** you want to run a different OS on your personal machine for development, testing, or learning. VirtualBox is free and works everywhere. If you're on a Mac — particularly Apple Silicon — Parallels Desktop is significantly better optimised than the alternatives.
 
-</figcaption>
+## FAQs
 
-</figure>
+**Can a hypervisor run on a laptop?**
+Yes. Type 2 hypervisors like VirtualBox and VMware Workstation run on any reasonably modern desktop or laptop. You'll want at least 16 GB of RAM if you plan to run multiple VMs simultaneously.
 
-## FAQs About Hypervisors
+**Is KVM a Type 1 or Type 2 hypervisor?**
+KVM (Kernel-based Virtual Machine) is classified as Type 1 because it runs within the Linux kernel itself, giving it direct access to hardware. However, it requires a running Linux host to operate, which sometimes causes confusion. The key distinction is that KVM turns the Linux kernel *into* the hypervisor rather than sitting on top of a general-purpose OS.
 
-**What is a hypervisor in simple terms?**
+**What's the difference between a hypervisor and a container runtime like Docker?**
+A hypervisor virtualises an entire machine, including a full OS for each VM. Docker containers share the host OS kernel and only isolate the application and its dependencies. Containers are lighter and faster to start; VMs provide stronger isolation. In practice, both are used together — containers often run *inside* VMs in production environments.
 
-A hypervisor is software that lets you run multiple operating systems on a single computer.
+**Can multiple VMs affect each other's performance?**
+Yes. Because VMs share physical resources, a VM consuming excessive CPU or I/O can degrade performance for its neighbours — a problem called the *noisy neighbour effect*. Hypervisors provide resource controls (CPU limits, memory reservations, I/O prioritisation) to manage this, but it requires active configuration and monitoring.
 
-**Why are hypervisors important?**
-
-They allow better **resource utilization**, flexibility, and cost savings by running multiple VMs on the same hardware.
-
-**What’s the difference between Type 1 and Type 2 hypervisors?**
-
-Type 1 runs directly on hardware (faster, enterprise use). Type 2 runs on top of an OS (slightly slower, personal use).
-
-**Can I use a hypervisor on my laptop?**
-
-Yes! Type 2 hypervisors like VirtualBox and VMware Workstation can run on regular desktops and laptops.
-
-**Which hypervisor is best for enterprise use?**
-
-Type 1 hypervisors like VMware ESXi, Hyper-V, or KVM are preferred in enterprise environments.
+**What happens to VMs if the hypervisor crashes?**
+All VMs on that host go down with it. This is why enterprise environments use clustered hypervisor hosts with shared storage — if one host fails, its VMs can be restarted automatically on a surviving host. VMware's vSphere HA and Microsoft's Failover Clustering are common implementations of this.
 
 ## Conclusion
 
-A hypervisor is the backbone of [virtualization](https://www.corpit.org/what-is-virtualization-and-benefit-of-virtualization/). By acting as a **bridge between hardware and virtual machines**, it enables you to run multiple OS on the same computer, use resources more efficiently, and cut costs.
+A hypervisor is the foundation that makes virtualisation practical. By abstracting physical hardware into a shared pool and presenting each VM with its own isolated environment, it enables a single server to do the work of many — more efficiently, more flexibly, and at lower cost.
 
-- Use **Type 1 hypervisors** if you need enterprise-grade performance and scalability.
+The type you need depends entirely on context:
 
-- Use **Type 2 hypervisors** if you just want to test, learn, or run different OS on your personal machine.
+- **Type 1** is the right choice for anything running in production — servers, data centres, cloud infrastructure — where performance and reliability are non-negotiable.
+- **Type 2** is the right choice for personal machines, development environments, and learning — anywhere convenience and ease of setup matter more than raw efficiency.
 
-In short: **Hypervisors make virtualization possible—and virtualization makes modern IT smarter, faster, and more efficient.**
+Understanding the difference between the two, and knowing why KVM sits in an interesting middle ground, gives you a solid foundation for working with any virtualisation platform you encounter in practice.
