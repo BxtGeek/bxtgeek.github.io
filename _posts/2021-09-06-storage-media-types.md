@@ -27,7 +27,6 @@ Drive architecture refers to the physical technology used to store data. There a
 HDDs are the oldest and most common type of storage drive. They use **spinning magnetic platters** and a mechanical read/write head to store and retrieve data.
 
 | Property | Details |
-|||
 | Performance | Moderate — limited by mechanical movement |
 | Capacity | Very high — up to 20 TB+ for consumer drives |
 | Speed variants | 5,400 RPM, 7,200 RPM, 10K RPM, 15K RPM |
@@ -39,14 +38,11 @@ HDDs are the oldest and most common type of storage drive. They use **spinning m
 
 **When to use an HDD**: HDDs are ideal when you need a large amount of storage at a low cost and raw speed isn't critical — for example, storing backups, media libraries, or archival data.
 
-
-
 ### SSD (Solid State Drive)
 
 SSDs have no moving parts. Instead, they use **NAND flash memory chips** to store data electronically. This makes them dramatically faster and more durable than HDDs.
 
 | Property | Details |
-|||
 | Performance | Very high — no mechanical delay |
 | Capacity | Typically up to 4–8 TB for consumer drives |
 | Speed variants | SATA SSD, NVMe SSD (see connector section below) |
@@ -58,8 +54,6 @@ SSDs have no moving parts. Instead, they use **NAND flash memory chips** to stor
 
 **When to use an SSD**: SSDs are the right choice when speed matters — faster boot times, quicker application launches, better virtual machine performance, and more responsive databases.
 
-
-
 ## Connector type: how the drive connects to your system
 
 The connector type determines how the drive communicates with your motherboard or server. Two of the most common connectors are SATA and SAS.
@@ -69,7 +63,6 @@ The connector type determines how the drive communicates with your motherboard o
 SATA is the standard connector used in most consumer desktops, laptops, and entry-level servers. It transfers data **serially** (one bit at a time in sequence) between the drive and the motherboard.
 
 | Property | Details |
-|||
 | Max throughput | ~600 MB/s (SATA III) |
 | Typical use | Desktops, laptops, NAS, home servers |
 | Compatible with | Both HDDs and SSDs |
@@ -78,14 +71,11 @@ SATA is the standard connector used in most consumer desktops, laptops, and entr
 
 **Key point**: SATA is the most affordable and widely compatible connector. It's more than sufficient for everyday computing, but it becomes a bottleneck in high-demand environments.
 
-
-
 ### SAS (Serial Attached SCSI)
 
 SAS is an enterprise-grade connector designed for **high performance, high reliability, and continuous operation**. It's the standard in data centres and production servers.
 
 | Property | Details |
-|||
 | Max throughput | ~22.5 GB/s (SAS-4) |
 | Typical use | Servers, data centres, SAN/NAS arrays |
 | Compatible with | Enterprise HDDs and SSDs |
@@ -98,14 +88,11 @@ SAS is an enterprise-grade connector designed for **high performance, high relia
 - **Better error handling** — SAS uses more robust error-correction protocols, reducing the risk of silent data corruption.
 - **Hot-swap support** — SAS drives can typically be replaced while the system is running.
 
-
-
 ## How architecture and connector combine
 
 These two dimensions — architecture and connector — are independent, and they combine in real-world drives:
 
 | Drive type | Architecture | Connector | Typical use case |
-|||||
 | SATA HDD | HDD | SATA | Desktop PCs, home NAS, bulk storage |
 | SATA SSD | SSD | SATA | Laptops, desktops, entry-level servers |
 | SAS HDD | HDD | SAS | Enterprise servers, high-capacity arrays |
@@ -115,11 +102,9 @@ These two dimensions — architecture and connector — are independent, and the
 > **Note on NVMe**: NVMe (Non-Volatile Memory Express) is a newer protocol that connects SSDs directly to the CPU via the PCIe bus, bypassing the limitations of SATA entirely. NVMe SSDs can reach speeds of 7,000+ MB/s — roughly 10× faster than a SATA SSD.
 
 
-
 ## Performance comparison at a glance
 
 | Drive | Sequential read speed | IOPS (random 4K) | Latency |
-|||||
 | SATA HDD (7.2K RPM) | ~150 MB/s | ~100 | ~5–10 ms |
 | SATA HDD (15K RPM) | ~200 MB/s | ~200 | ~2–4 ms |
 | SATA SSD | ~550 MB/s | ~90,000 | ~0.1 ms |

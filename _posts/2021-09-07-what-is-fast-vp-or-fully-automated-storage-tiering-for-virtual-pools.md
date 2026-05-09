@@ -33,8 +33,6 @@ In a typical FAST VP-enabled array, you'll have three types of drives working to
 
 FAST VP's job is to ensure your most active data always lives on the fastest tier, while data that hasn't been touched in a while gradually moves down to cheaper drives — saving cost without impacting application performance.
 
-
-
 ## How the three storage tiers work
 
 ### Extreme performance tier
@@ -54,7 +52,6 @@ FAST VP doesn't move data in real time. Instead, it runs **relocation jobs** on 
 A relocation job moves through the following states:
 
 | State | What's happening |
-|||
 | **Ready** | The job is scheduled and waiting to begin |
 | **Relocating** | Data is actively being moved between tiers |
 | **Paused** | The job has been temporarily suspended (manually or due to system load) |

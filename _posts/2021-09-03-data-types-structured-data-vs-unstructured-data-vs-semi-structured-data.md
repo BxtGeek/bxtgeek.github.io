@@ -63,7 +63,6 @@ Unstructured data lacks a predefined format and cannot be stored in traditional 
 ## Key Differences: Structured vs. Semi-Structured vs. Unstructured Data
 
 | Properties | Structured Data | Semi-Structured Data | Unstructured Data |
-| --- | --- | --- | --- |
 | **Technology** | SQL-based relational databases | XML, NoSQL, RDF | Binary & character data |
 | **Transaction Management** | Optimized for transactions | Adapted but not matured | No transaction support |
 | **Version Management** | Rows, tables, and tuples | Tuples and graphs | Versioned as a whole |
