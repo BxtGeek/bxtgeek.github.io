@@ -56,12 +56,7 @@ For most home users and developers, Type 2 is what you'll encounter. For anythin
 
 **Portability**: A VM is ultimately just a set of files. You can copy it, move it to a different host, or back it up like any other file. Migrating a workload from one physical server to another becomes a straightforward operation.
 
-<figure>
 ![Benefits of Virtualization](/assets/img/posts/visual-selection-3.webp)
-<figcaption>
-Benefits of Virtualization
-</figcaption>
-</figure>
 
 ## Downsides of virtualization
 
