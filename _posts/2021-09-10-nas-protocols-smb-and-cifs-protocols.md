@@ -9,7 +9,7 @@ tags:
   - "protocols"
   - "smb"
 image:
-  path: /assets/img/posts/NAS-Protocols-Explained-SMB-CIFS-and-How-They-Work.png
+  path: /assets/img/posts/NAS-Protocols-Explained-SMB-CIFS-and-How-They-Work.webp
 ---
 When you plug a USB drive into your computer, the operating system handles everything automatically — you don't think about how the data gets transferred. But when storage lives on a network, things work differently. The computer and the storage system are separate devices, often from different vendors, potentially running different operating systems. For them to exchange data reliably, they need an agreed-upon set of rules.
 
