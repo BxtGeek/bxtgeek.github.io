@@ -27,7 +27,6 @@ That's the problem **FAST VP** solves. Rather than forcing you to choose between
 In a typical FAST VP-enabled array, you'll have three types of drives working together:
 
 | Tier | Drive type | Purpose |
-||||
 | Extreme performance | SSD / NVMe flash | Maximum speed for hot data |
 | Performance | 10K or 15K RPM SAS | Balanced speed and capacity |
 | Capacity | 7.2K SATA or Nearline SAS | Low-cost bulk storage for cold data |
@@ -48,13 +47,6 @@ The performance tier uses **10K or 15K RPM SAS drives**. It sits in the middle g
 
 ### Capacity tier
 The capacity tier uses **7.2K RPM SATA or Nearline SAS drives**, optimised for storing large amounts of data at the lowest possible cost. Data that hasn't been accessed for an extended period — called *cold data* — is demoted here automatically. Examples include archived files, compliance data, old backups, or any data that needs to be retained but is rarely read.
-
-<figure>
-  <img src="/assets/img/posts/visual-selection-2.png" alt="Storage tiers in FAST VP — extreme performance, performance, and capacity" />
-  <figcaption>The three FAST VP storage tiers and the types of drives used in each</figcaption>
-</figure>
-
-
 
 ## How data relocation works
 FAST VP doesn't move data in real time. Instead, it runs **relocation jobs** on a defined schedule (typically during off-peak hours) to avoid impacting production workloads. During each job, FAST VP analyses sub-LUN chunks of data — usually 256 MB segments — and promotes or demotes them based on their recent access patterns.
