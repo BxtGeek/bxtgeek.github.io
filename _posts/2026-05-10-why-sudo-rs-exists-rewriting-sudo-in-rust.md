@@ -128,3 +128,23 @@ The Rust rewrite of `sudo` is one of the most practical, highest-impact examples
 - [CVE-2021-3156 writeup (Baron Samedit)](https://blog.qualys.com/vulnerabilities-threat-research/2021/01/26/cve-2021-3156-heap-based-buffer-overflow-in-sudo-baron-samedit)
 
 *If this post made you appreciate that little four-letter word at the start of your terminal commands a bit more — mission accomplished. The unglamorous plumbing of the internet is getting safer, one rewrite at a time.* 🦀
+
+# Watch the Full Video
+You can watch the full video here:
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe
+    src="https://www.youtube.com/embed/LVoK9BS_PDU"
+    style="position: absolute; top:0; left:0; width:100%; height:100%;"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div># Watch the Full Video
+You can watch the full video here:
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe
+    src="https://www.youtube.com/embed/6cGV9YwaODo"
+    style="position: absolute; top:0; left:0; width:100%; height:100%;"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
