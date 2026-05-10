@@ -112,13 +112,13 @@ Rewriting it in Rust doesn't just fix today's bugs. It makes an entire category 
 
 The Rust rewrite of `sudo` is one of the most practical, highest-impact examples of this shift. It's not theoretical safety — it's replacing a tool that runs as root on your machine, right now, with something the compiler has already stress-tested for a class of bugs humans consistently miss.
 
-## TL;DR
-| | `sudo` (original) | `sudo-rs` |
+| Feature | `sudo` (original) | `sudo-rs` |
+|---|---|---|
 | Language | C | Rust |
 | Memory safety | Manual (error-prone) | Enforced by compiler |
 | Age | ~44 years | ~2022 |
-| Drop-in replacement | — |  Yes |
-| Default on Ubuntu 24.04 | No |  Yes |
+| Drop-in replacement | — | Yes |
+| Default on Ubuntu 24.04 | No | Yes |
 | Historical CVEs | Several | None so far |
 
 ## Further Reading
