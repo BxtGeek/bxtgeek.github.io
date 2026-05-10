@@ -1,5 +1,5 @@
 ---
-title: "Why I Left macOS for Linux as My Daily Driver"
+title: "Why sudo-rs Exists: Rewriting sudo in Rust"
 date: 2026-05-10 00:00:00 +0530
 categories: 
   - "linux"
