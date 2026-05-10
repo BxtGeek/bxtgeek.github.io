@@ -133,15 +133,6 @@ The Rust rewrite of `sudo` is one of the most practical, highest-impact examples
 You can watch the full video here:
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe
-    src="https://www.youtube.com/embed/LVoK9BS_PDU"
-    style="position: absolute; top:0; left:0; width:100%; height:100%;"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
-</div># Watch the Full Video
-You can watch the full video here:
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe
     src="https://www.youtube.com/embed/6cGV9YwaODo"
     style="position: absolute; top:0; left:0; width:100%; height:100%;"
     frameborder="0"
