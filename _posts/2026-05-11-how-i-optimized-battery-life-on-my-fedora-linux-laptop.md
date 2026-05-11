@@ -165,6 +165,7 @@ You can check your kernel version using:
 ```bash
 uname -r
 ```
+
 ## 10. Managing USB Devices Carefully
 External devices can silently drain battery.
 Things I avoid when running on battery:
