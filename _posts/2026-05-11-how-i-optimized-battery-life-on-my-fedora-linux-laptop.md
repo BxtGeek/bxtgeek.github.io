@@ -11,6 +11,17 @@ After testing different configurations, monitoring power usage, and tweaking sys
 In my case, Fedora's default power management already worked well, and using TLP alongside it created conflicts. So instead of adding another power management layer, I focused on optimizing the existing Fedora setup.
 In this article, I'll share all the things I personally did to optimize battery life on Fedora Linux.
 
+# Watch the Full Video
+You can watch the full video here:
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe
+    src="https://www.youtube.com/embed/cJ9qYwl0fu8"
+    style="position: absolute; top:0; left:0; width:100%; height:100%;"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+
 ## 1. Check Battery Health Before Optimizing
 Before spending time optimizing power usage, it's important to first check your battery health.
 If the battery itself is heavily degraded, software optimizations alone will not make a major difference.
