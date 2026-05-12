@@ -13,6 +13,17 @@ These steps help me make the server more secure, easier to manage, and ready for
 
 In this article, I'll focus on RHEL-based distributions. If you use Debian, Ubuntu, or Arch, the commands will be slightly different, but the overall concepts remain the same.
 
+## Watch the Full Video
+You can watch the full video here:
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe
+    src="https://www.youtube.com/embed/03ebHoRi6I4"
+    style="position: absolute; top:0; left:0; width:100%; height:100%;"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+
 ## 1. Update the System
 
 The first thing I do after installing Linux is update the system. A freshly installed server may contain:
