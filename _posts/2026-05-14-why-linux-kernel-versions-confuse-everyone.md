@@ -10,6 +10,17 @@ When you visit [kernel.org](https://www.kernel.org), the Linux kernel versions c
 
 Here’s the practical breakdown of what each one means and how they relate to each other.
 
+## Watch the Full Video
+You can watch the full video here:
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe
+    src="https://www.youtube.com/embed/K6rYvz1pKxg"
+    style="position: absolute; top:0; left:0; width:100%; height:100%;"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+
 # How Linux Kernel Versions Actually Work
 
 The Linux kernel is developed in layers of stability and maturity.
