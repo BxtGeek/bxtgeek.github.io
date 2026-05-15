@@ -10,6 +10,17 @@ Linux provides hundreds of powerful commands, but there are a handful that becom
 
 This article covers 10 commands that are incredibly useful for beginners while still being powerful enough for intermediate Linux users. These are commands I personally find difficult to work without because they save time, improve visibility, and make troubleshooting easier.
 
+## Watch the Full Video
+You can watch the full video here:
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe
+    src="https://www.youtube.com/embed/0-Qj7UvSYkE"
+    style="position: absolute; top:0; left:0; width:100%; height:100%;"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+
 # 1. `grep` — Search Like a Pro
 
 The `grep` command is used to search for text patterns inside files or command outputs.
