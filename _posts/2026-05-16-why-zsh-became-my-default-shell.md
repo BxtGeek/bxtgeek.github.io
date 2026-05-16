@@ -12,6 +12,17 @@ That is when I discovered ZSH.
 
 Today, ZSH has completely replaced Bash as my default shell, and honestly, it is hard to go back. In this article, I want to share what a shell actually is, the different types of shells available, and why ZSH eventually became my favorite choice.
 
+## Watch the Full Video
+You can watch the full video here:
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe
+    src="https://www.youtube.com/embed/wn2gub9O8o4"
+    style="position: absolute; top:0; left:0; width:100%; height:100%;"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+
 # What is a Shell?
 
 A shell is a command-line interpreter that allows users to interact with the operating system. It acts as a bridge between the user and the kernel.
