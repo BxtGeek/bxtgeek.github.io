@@ -16,6 +16,17 @@ In my previous article, I covered Linux battery optimization techniques in detai
 
 Unlike traditional system monitoring tools, PowerTOP helps you identify exactly what is consuming power on your Linux system and provides recommendations to improve battery life.
 
+## Watch the Full Video
+You can watch the full video here:
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe
+    src="https://www.youtube.com/embed/kqT5yJ9SSmw"
+    style="position: absolute; top:0; left:0; width:100%; height:100%;"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+
 # What Is PowerTOP?
 
 Intel Corporation developed PowerTOP as a command-line utility for monitoring and optimizing power consumption on Linux systems.
