@@ -10,6 +10,10 @@ If you are using Linux on a laptop, battery life is always one of the biggest co
 
 In my previous article, I covered Linux battery health checks, thermal optimization, CPU governor tuning, and general battery-saving techniques. This article is an extension of that guide and focuses entirely on one powerful tool: **PowerTOP**. 
 
+In my previous article, I covered Linux battery optimization techniques in detail:
+
+[Read the previous article here]({% post_url 2026-05-11-how-i-optimized-battery-life-on-my-fedora-linux-laptop %})
+
 Unlike traditional system monitoring tools, PowerTOP helps you identify exactly what is consuming power on your Linux system and provides recommendations to improve battery life.
 
 # What Is PowerTOP?
