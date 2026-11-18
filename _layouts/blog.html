@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<section class="page-head">
+  <div class="container">
+    <h1 class="page-title">{{ page.title | default: "Blog" }}</h1>
+    <p class="page-subtitle">
+      Tutorials and deep dives on storage, Linux, virtualization, DevOps and cloud infrastructure.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <div class="post-list">
+      {% for post in paginator.posts %}
+        {% include post-card.html post=post %}
+      {% endfor %}
+    </div>
+
+    {% include pagination.html %}
+  </div>
+</section>

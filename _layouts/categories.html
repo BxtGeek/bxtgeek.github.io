@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<section class="page-head">
+  <div class="container">
+    <h1 class="page-title">{{ page.title | default: "Categories" }}</h1>
+    <p class="page-subtitle">Browse posts by category.</p>
+  </div>
+</section>
+
+<div class="container">
+  {% assign all_cats = "" | split: "" %}
+  {% for post in site.posts %}
+    {% for cat in post.categories %}
+      {% unless all_cats contains cat %}
+        {% assign all_cats = all_cats | push: cat %}
+      {% endunless %}
+    {% endfor %}
+  {% endfor %}
+  {% assign all_cats = all_cats | sort %}
+
+  <div class="tag-cloud">
+    {% for cat in all_cats %}
+      <a class="tag-pill" href="{{ cat | slugify | prepend: '/categories/' | append: '/' | relative_url }}">{{ cat }}</a>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,23 @@
+{% assign p = include.project %}
+<a class="project-card" href="{{ p.url | relative_url }}">
+  <div class="project-card-top">
+    <h2 class="project-card-title">{{ p.title }}</h2>
+    {% if p.status %}<span class="badge badge-status badge-status--{{ p.status | slugify }}">{{ p.status }}</span>{% endif %}
+  </div>
+
+  {% if p.description %}
+    <p class="project-card-desc">{{ p.description | markdownify | strip_html | normalize_whitespace }}</p>
+  {% endif %}
+
+  {% if p.tags %}
+    <div class="project-card-tags">
+      {% for tag in p.tags limit: 4 %}
+        <span class="tag-pill tag-pill--static">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if p.repo %}
+    <span class="project-card-link">Repository {% include icon.html name="arrow-right" %}</span>
+  {% endif %}
+</a>

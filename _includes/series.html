@@ -1,0 +1,19 @@
+{% if page.series %}
+  {% assign series_posts = site.posts | where: "series", page.series | sort: "date" %}
+  {% if series_posts.size > 0 %}
+    <aside class="series">
+      <p class="series-title">Part of the &ldquo;{{ page.series }}&rdquo; series</p>
+      <ol class="series-list">
+        {% for sp in series_posts %}
+          <li>
+            {% if sp.url == page.url %}
+              <span class="series-current">{{ sp.title }}</span>
+            {% else %}
+              <a href="{{ sp.url | relative_url }}">{{ sp.title }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    </aside>
+  {% endif %}
+{% endif %}

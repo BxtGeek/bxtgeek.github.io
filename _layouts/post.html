@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+{% assign author_slug = page.author | default: site.default_author %}
+{% assign author = site.data.authors[author_slug] %}
+
+<article class="post">
+  <div class="post-column">
+    {% include breadcrumbs.html %}
+
+    <header class="post-header">
+      {% if page.categories %}
+        <div class="post-categories">
+          {% for cat in page.categories %}
+            <a class="badge" href="{{ cat | slugify | prepend: '/categories/' | append: '/' | relative_url }}">{{ cat }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <h1 class="post-title" data-pagefind-meta="title">{{ page.title }}</h1>
+
+      <div class="post-byline">
+        {% if author and author.avatar %}
+          <img class="post-byline-avatar" src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" width="28" height="28">
+        {% endif %}
+        <span class="post-byline-author">
+          By <a href="{{ author_slug | prepend: '/about/author/' | append: '/' | relative_url }}">{{ author.name }}</a>
+        </span>
+        <span class="dot">&middot;</span>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        <span class="dot">&middot;</span>
+        <span>{% include reading-time.html post=page %}</span>
+      </div>
+    </header>
+
+    {% if page.image and page.image.path %}
+      <figure class="post-cover">
+        <img src="{{ page.image.path | relative_url }}" alt="{{ page.title }}">
+      </figure>
+    {% endif %}
+
+    <div class="post-body">
+      {% include toc.html %}
+      {% include takeaway.html %}
+      <div class="prose" data-pagefind-body>
+        {{ content }}
+      </div>
+      {% include series.html %}
+      {% include share.html %}
+    </div>
+
+    {% include related.html %}
+    {% include comments.html %}
+  </div>
+</article>

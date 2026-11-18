@@ -2,9 +2,19 @@
 
 source "https://rubygems.org"
 
-gem "jekyll-theme-chirpy", "~> 7.5"
+gem "jekyll", "~> 4.4"
 
-gem "html-proofer", "~> 5.0", group: :test
+group :jekyll_plugins do
+  gem "jekyll-seo-tag", "~> 2.8"
+  gem "jekyll-sitemap", "~> 1.4"
+  gem "jekyll-feed", "~> 0.17"
+  gem "jekyll-paginate-v2", "~> 3.0"
+  gem "jekyll-redirect-from", "~> 0.16"
+end
+
+group :test do
+  gem "html-proofer", "~> 5.0"
+end
 
 platforms :windows, :jruby do
   gem "tzinfo", ">= 1", "< 3"

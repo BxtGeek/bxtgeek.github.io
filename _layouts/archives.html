@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<section class="page-head">
+  <div class="container">
+    <h1 class="page-title">{{ page.title | default: "Archive" }}</h1>
+    <p class="page-subtitle">Everything, organised by year.</p>
+  </div>
+</section>
+
+<div class="container">
+  {% assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% assign years = years | sort: "name" | reverse %}
+
+  {% for year in years %}
+    <section class="archive-year">
+      <h2 class="archive-year-title">
+        <a href="{{ year.name | prepend: '/archive/' | append: '/' | relative_url }}">{{ year.name }}</a>
+        <span class="archive-year-count">{{ year.items.size }} post{% if year.items.size != 1 %}s{% endif %}</span>
+      </h2>
+      <ul class="archive-list">
+        {% for post in year.items %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d" }}</time>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</div>

@@ -1,0 +1,63 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: var(--fs-base);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  &:hover { background: var(--accent-hover); text-decoration: none; }
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+  &:hover { background: var(--bg-subtle); text-decoration: none; }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.badge-muted {
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+}
+
+.badge-status--active,
+.badge-status--maintained {
+  background: #e6f6ec;
+  color: #1a7f37;
+}
+
+.badge-status--archived {
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .badge-status--active,
+[data-theme="dark"] .badge-status--maintained {
+  background: #12291c;
+  color: #56d364;
+}
+
+.redirect-box {
+  padding: var(--space-10) var(--space-5);
+  text-align: center;
+  color: var(--text-muted);
+}

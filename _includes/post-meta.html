@@ -1,0 +1,18 @@
+{% assign p = include.post %}
+{% assign author_slug = p.author | default: site.default_author %}
+{% assign author = site.data.authors[author_slug] %}
+
+<span class="post-meta">
+  {% if author %}
+    <span class="post-meta-author">
+      {% if author.avatar %}
+        <img class="post-meta-avatar" src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" width="20" height="20" loading="lazy">
+      {% endif %}
+      <a href="{{ author_slug | prepend: '/about/author/' | append: '/' | relative_url }}">{{ author.name }}</a>
+    </span>
+    <span class="dot">&middot;</span>
+  {% endif %}
+  <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%-d %b %Y" }}</time>
+  <span class="dot">&middot;</span>
+  <span>{% include reading-time.html post=p %}</span>
+</span>

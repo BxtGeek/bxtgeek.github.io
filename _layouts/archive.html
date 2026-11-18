@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+{% assign posts = "" | split: "" %}
+{% for post in site.posts %}
+  {% if post.date.year == page.year %}
+    {% assign posts = posts | push: post %}
+  {% endif %}
+{% endfor %}
+
+<section class="page-head">
+  <div class="container">
+    <p class="breadcrumbs">
+      <a href="{{ '/archive/' | relative_url }}">Archive</a>
+      <span class="crumb-sep">/</span>
+      <span aria-current="page">{{ page.year }}</span>
+    </p>
+    <h1 class="page-title">{{ page.year }}</h1>
+    <p class="page-subtitle">{{ posts.size }} post{% if posts.size != 1 %}s{% endif %}</p>
+  </div>
+</section>
+
+<div class="container">
+  <ul class="archive-list">
+    {% for post in posts %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d" }}</time>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

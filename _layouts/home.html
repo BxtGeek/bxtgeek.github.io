@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow">{{ site.tagline }}</p>
+    <h1 class="hero-title">
+      Storage, Linux, Virtualization &amp; DevOps&nbsp;— explained clearly.
+    </h1>
+    <p class="hero-subtitle">
+      Hands-on tutorials and deep dives from working IT professionals, so you can
+      go from <em>“what is this?”</em> to actually running it in production.
+    </p>
+    <ul class="hero-points">
+      <li>Linux</li>
+      <li>Virtualization</li>
+      <li>DevOps</li>
+    </ul>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ '/blog/' | relative_url }}">Read the blog</a>
+      <a class="btn btn-secondary" href="{{ '/projects/' | relative_url }}">See projects</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <div class="section-head">
+      <h2 class="section-title">Latest posts</h2>
+    </div>
+
+    <div class="post-list">
+      {% for post in site.posts limit: 10 %}
+        {% include post-card.html post=post %}
+      {% endfor %}
+    </div>
+
+    <div class="section-foot">
+      <a class="btn btn-secondary" href="{{ '/blog/' | relative_url }}">View all posts &rarr;</a>
+    </div>
+  </div>
+</section>

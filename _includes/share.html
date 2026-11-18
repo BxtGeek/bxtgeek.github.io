@@ -1,0 +1,21 @@
+{% capture page_url %}{{ site.url }}{{ page.url }}{% endcapture %}
+{% assign title_enc = page.title | uri_escape %}
+{% assign url_enc = page_url | uri_escape %}
+
+<div class="share">
+  <span class="share-label">Share</span>
+  <div class="share-links">
+    {% for platform in site.data.share %}
+      {% assign href = platform.url | replace: "{{ title }}", title_enc | replace: "{{ url }}", url_enc %}
+      {% if platform.icon == "link" %}
+        <button class="share-link" type="button" data-copy="{{ page_url }}" title="{{ platform.label }}">
+          {% include icon.html name=platform.icon %}
+        </button>
+      {% else %}
+        <a class="share-link" href="{{ href }}" target="_blank" rel="noopener" title="{{ platform.label }}">
+          {% include icon.html name=platform.icon %}
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

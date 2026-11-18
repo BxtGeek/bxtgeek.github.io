@@ -4,7 +4,7 @@ date: 2026-05-18 00:00:00 +0530
 categories: 
   - "linux"
 image:
-  path: /assets/img/posts/distrobox:-the-linux-tool-everyone-should-know.webp
+  path: /assets/img/posts/distrobox-the-linux-tool-everyone-should-know.webp
 ---
 Distrobox: The Linux Tool Everyone Should Know
 

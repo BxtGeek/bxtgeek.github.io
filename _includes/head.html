@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script>
+  // Apply the saved/system theme before paint to avoid a flash of the wrong theme.
+  (function () {
+    var root = document.documentElement;
+    var def = root.getAttribute('data-theme-default') || 'auto';
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    var theme = saved || (def === 'auto'
+      ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+      : def);
+    root.setAttribute('data-theme', theme);
+  })();
+</script>
+
+{% seo %}
+
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+<link rel="icon" href="{{ site.avatar | relative_url }}" type="image/png">
+
+<link rel="preload" href="{{ '/assets/fonts/FiraCodeNerdFont-Regular.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">

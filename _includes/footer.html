@@ -1,0 +1,27 @@
+<footer class="site-footer">
+  <div class="container site-footer-inner">
+    <nav class="footer-nav" aria-label="Footer">
+      {% for item in site.data.navigation %}
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endfor %}
+      <a href="{{ '/projects/' | relative_url }}">Projects</a>
+      <a href="{{ '/tags/' | relative_url }}">Tags</a>
+      <a href="{{ '/archive/' | relative_url }}">Archive</a>
+      <a href="{{ '/about/author/' | relative_url }}">Authors</a>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </nav>
+
+    <div class="footer-social">
+      {% for link in site.data.contact %}
+        <a href="{{ link.url | relative_url }}" aria-label="{{ link.label }}" rel="me">
+          {% include icon.html name=link.icon %}
+        </a>
+      {% endfor %}
+    </div>
+
+    <p class="footer-copy">
+      &copy; {{ 'now' | date: '%Y' }} {{ site.title }} &middot; Built with
+      <a href="https://jekyllrb.com" rel="noopener">Jekyll</a>.
+    </p>
+  </div>
+</footer>

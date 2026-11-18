@@ -1,0 +1,14 @@
+{% if page.takeaway %}
+  {% assign items = page.takeaway %}
+  {% unless page.takeaway.first %}
+    {% assign items = "" | split: "" | push: page.takeaway %}
+  {% endunless %}
+  <aside class="takeaway">
+    <p class="takeaway-title">{% include icon.html name="check" %} Takeaway</p>
+    <ul class="takeaway-list">
+      {% for item in items %}
+        <li>{{ item | markdownify | replace: "<p>", "" | replace: "</p>", "" }}</li>
+      {% endfor %}
+    </ul>
+  </aside>
+{% endif %}

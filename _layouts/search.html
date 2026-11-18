@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<section class="page-head">
+  <div class="container">
+    <h1 class="page-title">{{ page.title | default: "Search" }}</h1>
+    <p class="page-subtitle">Search across every post.</p>
+  </div>
+</section>
+
+<div class="container">
+  {% include search.html %}
+</div>

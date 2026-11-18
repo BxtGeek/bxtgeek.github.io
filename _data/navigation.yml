@@ -1,0 +1,7 @@
+# Main site navigation (rendered in the header).
+- title: Blogs
+  url: /blog/
+- title: Categories
+  url: /categories/
+- title: About
+  url: /about/

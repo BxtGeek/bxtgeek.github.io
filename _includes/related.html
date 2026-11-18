@@ -1,0 +1,23 @@
+{% assign related = "" | split: "" %}
+{% for post in site.posts %}
+  {% if post.url != page.url %}
+    {% for tag in page.tags %}
+      {% if post.tags contains tag %}
+        {% assign related = related | push: post %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+{% assign related = related | uniq | sort: "date" | reverse | slice: 0, 3 %}
+
+{% if related.size > 0 %}
+<section class="related">
+  <h2 class="related-title">Related posts</h2>
+  <div class="post-list">
+    {% for post in related %}
+      {% include post-card.html post=post %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}" data-theme-default="{{ site.theme_mode | default: 'auto' }}">
+  <head>
+    {% include head.html %}
+  </head>
+  <body class="layout-{{ page.layout | default: 'page' }}{% if page.body_class %} {{ page.body_class }}{% endif %}">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    {% include header.html %}
+
+    <main id="main" class="site-main">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    {% if page.layout == 'post' or page.layout == 'project' %}
+      <script src="{{ '/assets/js/toc.js' | relative_url }}"></script>
+    {% endif %}
+    {% if page.layout == 'search' %}
+      <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+    {% endif %}
+  </body>
+</html>

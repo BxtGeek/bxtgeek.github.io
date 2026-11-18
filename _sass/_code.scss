@@ -1,0 +1,168 @@
+// Code blocks. assets/js/main.js wraps every code <pre> in a .code-block and
+// prepends a .code-header (language label + copy button) above it.
+
+// Fallback (no JS): bare <pre> / rouge <pre> stay readable.
+.prose pre,
+pre.highlight {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius);
+  margin: var(--space-5) 0;
+  padding: var(--space-4);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+// Enhanced container (added by JS).
+.code-block {
+  margin: var(--space-5) 0;
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius);
+  background: var(--code-bg);
+  overflow: hidden;
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: var(--bg-sunken);
+  border-bottom: 1px solid var(--code-border);
+}
+
+.code-lang {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+  user-select: none;
+}
+
+.copy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  &:hover { color: var(--text); border-color: var(--border-strong); }
+  &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  &.copied { color: var(--accent); border-color: var(--accent); }
+}
+
+// Neutralize the pre/rouge wrappers inside .code-block so the container is the
+// single styled box (these rules follow the fallback so they win the cascade).
+.code-block pre,
+.code-block .highlight,
+.code-block figure.highlight {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.code-block pre {
+  padding: var(--space-4);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.code-block code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  border-radius: 0;
+}
+
+// Rouge syntax highlighting (token colors).
+.highlight { color: var(--text); }
+
+.highlight .c,
+.highlight .c1,
+.highlight .cm,
+.highlight .cs,
+.highlight .cp,
+.highlight .ch { color: var(--syn-c); font-style: italic; }
+
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt,
+.highlight .kc { color: var(--syn-k); }
+
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .ss,
+.highlight .sv { color: var(--syn-s); }
+
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .il { color: var(--syn-n); }
+
+.highlight .n,
+.highlight .na,
+.highlight .nb,
+.highlight .nc,
+.highlight .no,
+.highlight .nd,
+.highlight .ni,
+.highlight .ne,
+.highlight .nf,
+.highlight .nl,
+.highlight .nn,
+.highlight .nx,
+.highlight .py,
+.highlight .nt,
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi { color: var(--syn-n); }
+
+.highlight .nc,
+.highlight .nn,
+.highlight .nt { color: var(--syn-t); }
+
+.highlight .o,
+.highlight .ow { color: var(--syn-o); }
+
+.highlight .bp,
+.highlight .nb { color: var(--syn-b); }
+
+.highlight .gd { color: var(--syn-k); }
+.highlight .gi { color: var(--syn-s); }
+.highlight .gh { color: var(--syn-c); font-weight: 600; }
+.highlight .gp { color: var(--syn-c); }
+.highlight .gs { font-weight: 600; }
+.highlight .gu { color: var(--syn-c); }
+.highlight .gt { color: var(--syn-o); }
+.highlight .gr,
+.highlight .err { color: var(--syn-k); }

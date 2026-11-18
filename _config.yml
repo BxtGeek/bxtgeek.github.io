@@ -1,100 +1,138 @@
-# Basic Site Settings
-theme: jekyll-theme-chirpy
-lang: en
-timezone: Asia/Kolkata
+# =============================================================================
+# CorpIT — custom theme configuration
+# =============================================================================
 
+# ---- Site identity ----------------------------------------------------------
 title: CorpIT
 tagline: Learning Storage, Linux, Virtualization, DevOps and some random stuff
 description: >-
-  Handmade By Talented Professionals
+  Practical, hands-on tutorials and deep dives on Storage, Linux,
+  Virtualization, DevOps, Cloud and IT infrastructure — written by
+  working professionals for learners and practitioners.
 
-url: "https://bxtgeek.github.io"
+url: "https://corpit.org"
 baseurl: ""
 
-# Author / Social
-github:
-  username: bxtgeek
+lang: en
+timezone: Asia/Kolkata
 
-twitter:
-  username: bxtgeek
-
-social:
+# ---- Author (used by jekyll-seo-tag for meta authors; the primary author) ----
+author:
   name: Manoj Kumar
   email: bxtgeek@gmail.com
-  links:
-    - https://github.com/bxtgeek
-    - https://x.com/bxtgeek
-    - https://linkedin.com/in/bxtgeek/
-    - https://youtube.com/@corp-it
+  twitter: bxtgeek
 
-# Appearance
+# Slug into `_data/authors.yml` used when a post does not set `author:` itself.
+default_author: manoj
+
+# ---- Appearance -------------------------------------------------------------
+# One of: "dark", "light", "auto" (auto follows the OS via JS).
 theme_mode: dark
-avatar: "/assets/img/avatar.png"
-toc: true
+avatar: /assets/img/avatar.png
+# Show the post's cover image on the blog list cards.
+show_post_cover: true
 
-# Analytics (optional)
-analytics:
-  google:
-    id: ""
-
-# PWA (keep enabled for caching)
-pwa:
-  enabled: true
-  cache:
-    enabled: true
-
-# Pagination
-paginate: 10
-
-# Collections
+# ---- Collections ------------------------------------------------------------
 collections:
-  tabs:
+  projects:
     output: true
-    sort_by: order
+    permalink: /projects/:title/
 
-# Defaults
+# ---- Defaults ---------------------------------------------------------------
 defaults:
   - scope:
       path: ""
       type: posts
     values:
       layout: post
+      permalink: /posts/:title/
       comments: true
       toc: true
-      permalink: /posts/:title/
-
   - scope:
       path: ""
-      type: tabs
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: pages
     values:
       layout: page
-      permalink: /:title/
 
-# Performance Optimizations
-# Compress CSS
-sass:
-  style: compressed
+# ---- Plugins ----------------------------------------------------------------
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate-v2
+  - jekyll-redirect-from
 
-# HTML compression (you already had it, cleaned)
-compress_html:
-  clippings: all
-  comments: ["<!-- ", " -->"]
-  endings: all
-  blanklines: false
+# ---- Pagination (jekyll-paginate-v2) ----------------------------------------
+pagination:
+  enabled: true
+  per_page: 10
+  permalink: /page/:num/
+  limit: 0
+  sort_field: date
+  sort_reverse: true
+  title: ":title — page :num"
+  trail:
+    before: 2
+    after: 2
 
-# Enable incremental build (dev speed, not prod but useful)
-incremental: true
+# ---- Feed -------------------------------------------------------------------
+feed:
+  path: /feed.xml
+  posts_limit: 10
 
-# Markdown / Code
+# ---- SEO / social -----------------------------------------------------------
+twitter:
+  username: bxtgeek
+
+social:
+  name: Manoj Kumar
+  links:
+    - https://github.com/bxtgeek
+    - https://x.com/bxtgeek
+    - https://www.linkedin.com/in/bxtgeek/
+    - https://www.youtube.com/@corp-it
+
+# ---- Comments (giscus) — fill these in before going live --------------------
+giscus:
+  repo: bxtgeek/corpit.org
+  repo_id: ""
+  category: Announcements
+  category_id: ""
+  mapping: pathname
+  strict: "0"
+  reactions_enabled: "1"
+  emit_metadata: "0"
+  input_position: bottom
+  theme: preferred_color_scheme
+  lang: en
+
+# ---- Search -----------------------------------------------------------------
+# Pagefind is run against the built site by the GitHub Actions workflow and by
+# `npm run search` locally. Set `search: false` to disable the search page.
+search:
+  enabled: true
+
+# ---- Markdown / kramdown ----------------------------------------------------
+markdown: kramdown
 kramdown:
+  auto_ids: true
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     css_class: highlight
     block:
-      line_numbers: true
-      start_line: 1
+      line_numbers: false
 
-# Exclude unnecessary files
+# ---- Sass -------------------------------------------------------------------
+sass:
+  style: compressed
+  sourcemap: never
+
+# ---- Exclude from the build -------------------------------------------------
 exclude:
   - "*.gem"
   - "*.gemspec"
@@ -104,3 +142,8 @@ exclude:
   - package.json
   - package-lock.json
   - yarn.lock
+  - tools
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .github

@@ -1,0 +1,42 @@
+<header class="site-header">
+  <div class="container site-header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-mark">{% include icon.html name="terminal" %}</span>
+      <span class="brand-name">{{ site.title }}</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      {% for item in site.data.navigation %}
+        <a class="nav-link{% if page.url == item.url %} is-active{% endif %}" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endfor %}
+      <a class="nav-link nav-link--search" href="{{ '/search/' | relative_url }}" aria-label="Search">
+        {% include icon.html name="search" %}
+      </a>
+      <div class="nav-social">
+        {% for link in site.data.contact limit: 4 %}
+          <a class="icon-btn" href="{{ link.url }}" aria-label="{{ link.label }}" title="{{ link.label }}" target="_blank" rel="noopener noreferrer">
+            {% include icon.html name=link.icon %}
+          </a>
+        {% endfor %}
+      </div>
+    </nav>
+
+    <div class="header-actions">
+      <span class="header-divider" aria-hidden="true"></span>
+      <div class="header-social">
+        {% for link in site.data.contact limit: 4 %}
+          <a class="icon-btn" href="{{ link.url }}" aria-label="{{ link.label }}" title="{{ link.label }}" target="_blank" rel="noopener noreferrer">
+            {% include icon.html name=link.icon %}
+          </a>
+        {% endfor %}
+      </div>
+      <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme">
+        <span class="theme-toggle-sun">{% include icon.html name="sun" %}</span>
+        <span class="theme-toggle-moon">{% include icon.html name="moon" %}</span>
+      </button>
+      <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        {% include icon.html name="menu" %}
+      </button>
+    </div>
+  </div>
+</header>

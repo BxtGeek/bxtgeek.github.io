@@ -1,0 +1,11 @@
+{% if page.layout == 'post' %}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="{{ '/' | relative_url }}">Home</a>
+  <span class="crumb-sep">/</span>
+  {% if page.categories %}
+    <a href="{{ page.categories.first | slugify | prepend: '/categories/' | append: '/' | relative_url }}">{{ page.categories.first }}</a>
+    <span class="crumb-sep">/</span>
+  {% endif %}
+  <span aria-current="page">{{ page.title }}</span>
+</nav>
+{% endif %}

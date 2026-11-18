@@ -1,0 +1,23 @@
+{% assign p = include.post %}
+<article class="post-card">
+  <div class="post-card-side">
+    {% if p.categories %}
+      {% for cat in p.categories limit: 2 %}
+        <a class="badge" href="{{ cat | slugify | prepend: '/categories/' | append: '/' | relative_url }}">{{ cat }}</a>
+      {% endfor %}
+    {% else %}
+      <span class="badge badge-muted">Post</span>
+    {% endif %}
+  </div>
+
+  <div class="post-card-main">
+    <h2 class="post-card-title">
+      <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+    </h2>
+    <p class="post-card-excerpt">{{ p.excerpt | strip_html | normalize_whitespace | truncatewords: 30 }}</p>
+    <div class="post-card-footer">
+      {% include post-meta.html post=p %}
+      <a class="read-link" href="{{ p.url | relative_url }}">Read the article <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</article>

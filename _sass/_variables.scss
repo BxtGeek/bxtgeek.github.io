@@ -1,0 +1,94 @@
+// Design tokens. Colors are defined for light (:root) and dark
+// ([data-theme="dark"]) themes; everything else reads these via var().
+
+:root {
+  // Typography
+  --font-body: "FiraCode Nerd Font", "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-heading: "FiraCode Nerd Font", "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono: "FiraCode Nerd Font", "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  // Font scale
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.375rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.125rem;
+  --fs-3xl: clamp(2.25rem, 6vw, 3.25rem);
+
+  // Spacing
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+
+  // Layout
+  --container: 72rem;
+  --container-narrow: 50rem;
+  --header-h: 4rem;
+
+  // Radius
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+
+  // Light theme
+  --bg: #ffffff;
+  --bg-subtle: #f5f6f8;
+  --bg-elevated: #ffffff;
+  --bg-sunken: #eef0f3;
+  --text: #191c22;
+  --text-muted: #596170;
+  --text-faint: #8b929d;
+  --border: #e6e8ec;
+  --border-strong: #d3d7de;
+  --accent: #2f6fed;
+  --accent-hover: #1f5cd4;
+  --accent-soft: #eaf1ff;
+  --accent-contrast: #ffffff;
+  --code-bg: #f4f6f9;
+  --code-border: #e6e8ec;
+  --selection: #cfe0ff;
+
+  // Syntax (light)
+  --syn-c: #6a737d;
+  --syn-k: #d73a49;
+  --syn-s: #22863a;
+  --syn-n: #005cc5;
+  --syn-t: #6f42c1;
+  --syn-o: #e36209;
+  --syn-b: #e36209;
+}
+
+:root[data-theme="dark"] {
+  --bg: #101216;
+  --bg-subtle: #15181e;
+  --bg-elevated: #191c23;
+  --bg-sunken: #0c0e12;
+  --text: #e7e9ed;
+  --text-muted: #a3abb6;
+  --text-faint: #6c7480;
+  --border: #262b34;
+  --border-strong: #343a45;
+  --accent: #6ea1ff;
+  --accent-hover: #8ab3ff;
+  --accent-soft: #1c2940;
+  --accent-contrast: #0b1220;
+  --code-bg: #161a20;
+  --code-border: #262b34;
+  --selection: #26406e;
+
+  // Syntax (dark)
+  --syn-c: #8b949e;
+  --syn-k: #ff7b72;
+  --syn-s: #a5d6ff;
+  --syn-n: #79c0ff;
+  --syn-t: #d2a8ff;
+  --syn-o: #ffa657;
+  --syn-b: #ffa657;
+}
