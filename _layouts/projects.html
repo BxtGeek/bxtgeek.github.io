@@ -11,10 +11,12 @@ layout: default
   </div>
 </section>
 
-<div class="container">
-  <div class="project-grid">
-    {% for project in site.projects %}
-      {% include project-card.html project=project %}
-    {% endfor %}
+<section class="section">
+  <div class="container">
+    <div class="project-grid">
+      {% for project in site.projects %}
+        {% include project-card.html project=project %}
+      {% endfor %}
+    </div>
   </div>
-</div>
+</section>

@@ -21,13 +21,15 @@ layout: default
   </div>
 </section>
 
-<div class="container">
-  <ul class="archive-list">
-    {% for post in posts %}
-      <li>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d" }}</time>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+<section class="section">
+  <div class="container">
+    <ul class="archive-list">
+      {% for post in posts %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d" }}</time>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
