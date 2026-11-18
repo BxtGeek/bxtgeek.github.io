@@ -8,7 +8,7 @@ manoj:
   bio: >-
     6+ years in IT with 4+ years focused on Storage & Virtualization.
     Writes about Linux, storage, virtualization, DevOps and cloud infrastructure.
-  avatar: /assets/img/avatar.png
+  avatar: /assets/img/authors/manoj.jpg
   email: bxtgeek@gmail.com
   links:
     - label: GitHub
@@ -30,7 +30,7 @@ ravi:
   bio: >-
     8+ years in IT with 4+ years focused on storage technologies — SAN/NAS,
     Fast Cache / Fast VP, CIFS/NFS, LDAP/LDAPS, Linux, RHEL and cloud infra.
-  avatar: ""
+  avatar: /assets/img/authors/ravi.jpg
   email: ""
   links:
     - label: LinkedIn

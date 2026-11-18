@@ -22,7 +22,7 @@ layout: default
 
       <div class="post-byline">
         {% if author and author.avatar %}
-          <img class="post-byline-avatar" src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" width="28" height="28">
+          <img class="post-byline-avatar" src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" width="28" height="28" loading="lazy">
         {% endif %}
         <span class="post-byline-author">
           By <a href="{{ author_slug | prepend: '/about/author/' | append: '/' | relative_url }}">{{ author.name }}</a>
