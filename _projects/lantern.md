@@ -22,3 +22,5 @@ in one small container (Docker or Podman) and keeps everything in a single data 
 - Weather and air quality from Open-Meteo, with no API key needed
 - Built-in wallpapers, random Pexels or Unsplash photos, and your own uploads
 - JSON export and import for backups
+
+*Vibe coded: built mostly with AI assistance.*

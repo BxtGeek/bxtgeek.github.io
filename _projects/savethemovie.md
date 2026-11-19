@@ -22,3 +22,5 @@ three categories, and all API keys stay server-side.
 - Trending content per category and cross-source search
 - React, TypeScript, Vite, Tailwind CSS and an Express backend
 - One `docker compose up` to run the app and the database
+
+*Vibe coded: built mostly with AI assistance.*

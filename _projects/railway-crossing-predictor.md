@@ -24,3 +24,5 @@ It works without a backend server and is hosted free on GitHub Pages
 - A Cloudflare Worker triggers a GitHub Action that refreshes the data every 5 minutes
 - **Status:** paused. The data source cut its free API limit from 300 to 50 requests a day,
   so live data is on hold until I find a replacement.
+
+*Vibe coded: built mostly with AI assistance.*
